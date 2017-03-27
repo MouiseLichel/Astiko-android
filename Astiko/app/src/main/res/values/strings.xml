@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Astiko</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in">Connexion</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">Adresse mail non valide</string>
+    <string name="error_invalid_password">Ce mot de passe est trop court</string>
+    <string name="error_incorrect_password">Ce mot de passe est incorrect</string>
+    <string name="error_field_required">Le champ est obligatoire</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string-array name="Commander">
+        <item> Commander maintenant</item>
+        <item> Planifier commande</item>
+    </string-array>
+    <string-array name="Formules">
+        <item>Express</item>
+        <item>Complet ( Interieur + Exterieur )</item>
+    </string-array>
+
+</resources>

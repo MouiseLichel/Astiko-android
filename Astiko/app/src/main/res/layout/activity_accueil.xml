@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:id="@+id/Bienvenue" />
+
+            <Button
+                android:text="Mon compte"
+                android:layout_width="198dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/compte"
+                android:onClick="goMonCompte" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:id="@+id/commander" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:text="Choisissez la formule de lavage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/choixView" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/choixFormule" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

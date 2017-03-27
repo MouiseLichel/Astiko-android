@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:text="Mes informations"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:id="@+id/MonCompteTitre" />
+
+            <TextView
+                android:text="Nom"
+                android:layout_width="143dp"
+                android:layout_height="45dp"
+                android:id="@+id/MonComptePrenom" />
+
+            <TextView
+                android:text="Prénom"
+                android:layout_width="143dp"
+                android:layout_height="43dp"
+                android:id="@+id/MonCompteNom" />
+
+            <TextView
+                android:text="Date de naissance"
+                android:layout_width="136dp"
+                android:layout_height="47dp"
+                android:id="@+id/MonCompteNaissance" />
+
+            <TextView
+                android:text="Adresse"
+                android:layout_width="132dp"
+                android:layout_height="44dp"
+                android:id="@+id/MonCompteAdresse" />
+
+            <TextView
+                android:text="Ville"
+                android:layout_width="125dp"
+                android:layout_height="42dp"
+                android:id="@+id/MonCompteVille" />
+
+            <TextView
+                android:text="E-Mail"
+                android:layout_width="140dp"
+                android:layout_height="45dp"
+                android:id="@+id/MonCompteMail" />
+
+            <TextView
+                android:text="Numero de telephone"
+                android:layout_width="141dp"
+                android:layout_height="40dp"
+                android:id="@+id/MonCompteTel" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:text="Modifier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/MonCompteModifier"
+                    android:onClick="GoModifier" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:text="Retour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/MonCompteRetour"
+                    android:onClick="GoRetour" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

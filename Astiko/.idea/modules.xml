@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file:///usr/local/android-2.2/moreaut/AndroidStudioProjects/Astiko/Astiko.iml" filepath="/usr/local/android-2.2/moreaut/AndroidStudioProjects/Astiko/Astiko.iml" />
+      <module fileurl="file:///usr/local/android-2.2/moreaut/AndroidStudioProjects/Astiko/app/app.iml" filepath="/usr/local/android-2.2/moreaut/AndroidStudioProjects/Astiko/app/app.iml" />
+    </modules>
+  </component>
+</project>
