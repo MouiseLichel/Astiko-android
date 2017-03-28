@@ -14,6 +14,7 @@
         completions."
     </string>
     <string-array name="Commander">
+        <item> Choix de la formule de lavage</item>
         <item> Commander maintenant</item>
         <item> Planifier commande</item>
     </string-array>
@@ -21,5 +22,20 @@
         <item>Express</item>
         <item>Complet ( Interieur + Exterieur )</item>
     </string-array>
+    <string-array name="Lieu">
+        <item>Ma position actuelle</item>
+        <item>Votre adresse</item>
+        <item>Saisir une adresse différente</item>
+    </string-array>
+    <string-array name="Voitures">
+        <item> Voiture 1</item>
+        <item> Voiture 2</item>
+    </string-array>
+    <string name="urlUser">http://172.18.49.101:8080/v1/user/</string>
+    <string name="urlCommande">http://172.18.49.101:8080/v1/commande/</string>
+    <string name="urlCar">http://172.18.49.101:8080/v1/car/</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+    AIzaSyCtZU4bx6i87Ig7F1r974q7vsaizic6aoI
+</string>
 
 </resources>

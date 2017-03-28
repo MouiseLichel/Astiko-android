@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:text="Planifier commande "
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:id="@+id/textView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+            <TextView
+                android:text="Choix de la date du lavage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dateLavage" />
+
+            <DatePicker
+                android:layout_width="match_parent"
+                android:layout_height="386dp"
+                android:id="@+id/dateLavage" />
+
+            <TextView
+                android:text="Choix de l'heure du lavage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/heureLavage"
+                android:layout_weight="0.02" />
+
+            <TimePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/heureLavageTime"
+                android:headerBackground="?attr/actionModeSplitBackground"
+                android:layout_weight="0.23" />
+
+            <TextView
+                android:text="Choix de la formule"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:id="@+id/textView4" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerOptionLavage" />
+
+            <TextView
+                android:text="Choix de la voiture"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:id="@+id/choixVoiture" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerVoitures" />
+
+            <TextView
+                android:text="Choix du lieu de lavage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/choixLieuLavageNow" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerLieuNow" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/CommentaireCommandeNow"
+                android:hint="Remarque éventuelle ( facultatif )" />
+
+            <Button
+                android:text="Procéder au paiement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/CommanderMaintenantValiderButton"
+                android:onClick="doPaiement" />
+
+            <Button
+                android:text="Retour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/CommanderMaintenantRetourButton"
+                android:onClick="doRetour" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

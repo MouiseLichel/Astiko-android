@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -11,6 +12,7 @@ import android.widget.TextView;
  */
 public class MonCompte extends Activity {
 
+    String compteNomValue,comptePrenomValue,compteBirthValue,compteAdresseValue,compteVilleValue,compteMailValue,compteTelValue;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +29,29 @@ public class MonCompte extends Activity {
         compteTel = (TextView) findViewById(R.id.MonCompteTel);
 
 
+
+
+        compteNomValue = findViewById(R.id.MonCompteNomValue).toString();
+        comptePrenomValue = findViewById(R.id.MonComptePrenomValue).toString();
+        compteBirthValue = findViewById(R.id.MonCompteNaissanceValue).toString();
+        compteAdresseValue = findViewById(R.id.MonCompteAdresseValue).toString();
+        compteVilleValue = findViewById(R.id.MonCompteVilleValue).toString();
+        compteMailValue = findViewById(R.id.MonCompteMailValue).toString();
+        compteTelValue = findViewById(R.id.MonCompteTelValue).toString();
+
+
     }
 
     public void GoModifier(View view){
         Intent intent = new Intent(MonCompte.this, ModifCompte.class);
+        intent.putExtra("nom",compteNomValue );
+        intent.putExtra("prenom",comptePrenomValue);
+        intent.putExtra("naissance",compteBirthValue);
+        intent.putExtra("adresse",compteAdresseValue );
+        intent.putExtra("ville",compteVilleValue );
+        intent.putExtra("mail",compteMailValue);
+        intent.putExtra("tel",compteTelValue );
+        intent.putExtra("login",(String) getIntent().getSerializableExtra("login") );
         startActivity(intent);
     }
 

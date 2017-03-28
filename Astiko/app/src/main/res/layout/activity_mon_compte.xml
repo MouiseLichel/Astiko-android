@@ -22,13 +22,23 @@
                 android:text="Nom"
                 android:layout_width="143dp"
                 android:layout_height="45dp"
-                android:id="@+id/MonComptePrenom" />
+                android:id="@+id/MonCompteNom" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MonCompteNomValue" />
 
             <TextView
                 android:text="Prénom"
                 android:layout_width="143dp"
                 android:layout_height="43dp"
-                android:id="@+id/MonCompteNom" />
+                android:id="@+id/MonComptePrenom" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MonComptePrenomValue" />
 
             <TextView
                 android:text="Date de naissance"
@@ -37,10 +47,20 @@
                 android:id="@+id/MonCompteNaissance" />
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MonCompteNaissanceValue" />
+
+            <TextView
                 android:text="Adresse"
                 android:layout_width="132dp"
                 android:layout_height="44dp"
                 android:id="@+id/MonCompteAdresse" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MonCompteAdresseValue" />
 
             <TextView
                 android:text="Ville"
@@ -49,16 +69,31 @@
                 android:id="@+id/MonCompteVille" />
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MonCompteVilleValue" />
+
+            <TextView
                 android:text="E-Mail"
                 android:layout_width="140dp"
                 android:layout_height="45dp"
                 android:id="@+id/MonCompteMail" />
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MonCompteMailValue" />
+
+            <TextView
                 android:text="Numero de telephone"
                 android:layout_width="141dp"
                 android:layout_height="40dp"
                 android:id="@+id/MonCompteTel" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MonCompteTelValue" />
 
             <LinearLayout
                 android:orientation="vertical"

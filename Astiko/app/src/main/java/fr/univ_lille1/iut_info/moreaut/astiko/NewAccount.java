@@ -4,9 +4,21 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.view.View;
 import android.widget.EditText;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 
 /**
@@ -136,30 +148,26 @@ public class NewAccount extends Activity {
             focusView = birthday;
             cancel = true;
         }
-
-/*
-        if (TextUtils.isEmpty(couleurs) ){
-            couleur.setError("Veuillez entrer la couleur");
-            focusView = couleur;
-            cancel = true;
-        }
-
-        if (!verifString(couleurs)){
-            couleur.setError("Couleur invalide");
-            focusView = couleur;
-            cancel = true;
-        }
-*/
         if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
+
             focusView.requestFocus();
         } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
 
             Intent intent = new Intent(NewAccount.this, NewAuto.class);
             //On envoi la voiture a la base de données
+            HashMap<String,String> map = new HashMap<>();
+            map.put("login",logins);
+            map.put("passwdHash",mdps);
+            map.put("nom",noms);
+            map.put("prenom", prenoms);
+            map.put("isadmin",""+0);
+            map.put("tel",tels);
+            map.put("email",mails);
+            map.put("dob",birthdays);
+            map.put("search",logins + " " + mails);
+            RequestQueue queue = Volley.newRequestQueue(this);
+            new CommServer().sendServer(queue, map, getString(R.string.urlUser));
+            intent.putExtra("login",logins);
             startActivity(intent);
         }
     }
@@ -184,4 +192,5 @@ public class NewAccount extends Activity {
         }
         return true;
     }
+
 }

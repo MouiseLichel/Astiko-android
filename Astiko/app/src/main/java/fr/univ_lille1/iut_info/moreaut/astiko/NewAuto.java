@@ -4,9 +4,21 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 /**
  * Created by moreaut on 23/03/17.
@@ -14,7 +26,7 @@ import android.widget.EditText;
 
 public class NewAuto extends Activity {
 
-    EditText marque, immat, couleur;
+    EditText marque, immat, couleur, modele;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +55,7 @@ public class NewAuto extends Activity {
         marque = (EditText)findViewById(R.id.Marque);
         immat = (EditText)findViewById(R.id.Immat);
         couleur = (EditText)findViewById(R.id.Couleur);
+        modele = (EditText)findViewById(R.id.Modele);
 
         // Reset errors.
         marque.setError(null);
@@ -53,6 +66,7 @@ public class NewAuto extends Activity {
         String marques = marque.getText().toString();
         String immats = immat.getText().toString();
         String couleurs = couleur.getText().toString();
+        String modeles = modele.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -102,6 +116,14 @@ public class NewAuto extends Activity {
             }else {
                 Intent intent = new Intent(NewAuto.this, LoginActivityAstiko.class);
                 //On envoi la voiture a la base de données
+                HashMap<String, String> map = new HashMap<>();
+                map.put("userlogin",(String) getIntent().getSerializableExtra("login"));
+                map.put("immatriculation", immats);
+                map.put("marque", marques);
+                map.put("modele", modeles);
+                map.put("couleur", couleurs);
+                RequestQueue queue = Volley.newRequestQueue(this);
+                new CommServer().sendServer(queue, map, getString(R.string.urlCar));
                 startActivity(intent);
             }
         }
@@ -127,4 +149,5 @@ public class NewAuto extends Activity {
         }
         return true;
     }
+
 }

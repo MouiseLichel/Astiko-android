@@ -45,6 +45,17 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="Modele"
+                    android:id="@+id/Modele" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:inputType="textUri|textPersonName"
                     android:ems="10"
                     android:id="@+id/Immat"

@@ -12,75 +12,68 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <EditText
+            <TextView
+                android:text="Commander maintenant "
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:id="@+id/textView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+            <TextView
+                android:text="Choix de la formule"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:id="@+id/textView4" />
+
+            <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/MonCompteEditNom"
-                android:hint="Nom" />
+                android:id="@+id/spinnerOptionLavage" />
+
+            <TextView
+                android:text="Choix de la voiture"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:id="@+id/choixVoiture" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerVoitures" />
+
+            <TextView
+                android:text="Choix du lieu de lavage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/choixLieuLavageNow" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerLieuNow" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/MonCompteEditPrenom"
-                android:hint="Prénom" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/MonCompteEditBirth"
-                android:hint="Date de naissance" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/MonCompteEditAdresse"
-                android:hint="Adresse" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/MonCompteEditVille"
-                android:hint="Ville" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/MonCompteEditMail"
-                android:hint="E-Mail" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/MonCompteEditTel"
-                android:hint="Numero de telephone" />
+                android:id="@+id/CommentaireCommandeNow"
+                android:hint="Remarque éventuelle ( facultatif )" />
 
             <Button
-                android:text="Valider"
+                android:text="Procéder au paiement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/MonCompteEditValider"
+                android:id="@+id/CommanderMaintenantValiderButton"
                 android:onClick="doValider" />
 
             <Button
                 android:text="Retour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/MonCompteEditRetour"
+                android:id="@+id/CommanderMaintenantRetourButton"
                 android:onClick="doRetour" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

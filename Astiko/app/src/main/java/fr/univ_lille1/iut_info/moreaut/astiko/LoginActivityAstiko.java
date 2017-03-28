@@ -32,12 +32,28 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
+import static fr.univ_lille1.iut_info.moreaut.astiko.R.id.login;
 
 /**
  * A login screen that offers login via email/password.
@@ -49,15 +65,19 @@ public class LoginActivityAstiko extends Activity {
     // UI references.
     private EditText loginText;
     private EditText passWordText;
-
+    String log;
+    RequestQueue queue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_astiko);
+        System.setProperty("http.proxyHost","cache.univ-lille1.fr");
+        System.setProperty("http.proxyPort","3128");
         // Set up the login form.
-        loginText = (EditText) findViewById(R.id.login);
+        loginText = (EditText) findViewById(login);
         passWordText = (EditText) findViewById(R.id.password);
+        queue = Volley.newRequestQueue(this);
 
         Button authentButton = (Button) findViewById(R.id.authent_button);
         authentButton.setOnClickListener(new OnClickListener() {
@@ -91,7 +111,7 @@ public class LoginActivityAstiko extends Activity {
 
 
         // Store values at the time of the login attempt.
-        String log = loginText.getText().toString();
+        log = loginText.getText().toString();
         String password = passWordText.getText().toString();
 
         boolean cancel = false;
@@ -123,9 +143,33 @@ public class LoginActivityAstiko extends Activity {
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            Intent intent = new Intent(LoginActivityAstiko.this, Accueil.class);
-            intent.putExtra("login", log);
-            startActivity(intent);
+
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, getString(R.string.urlUser),
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Gson gson = new GsonBuilder().create();
+                            List<User> list = gson.fromJson(response, new TypeToken<List<User>>(){}.getType());
+                            for (User u : list)
+                                if (u.getLogin().equals(log)) {
+                                    Intent intent = new Intent(LoginActivityAstiko.this, Accueil.class);
+                                    intent.putExtra("login", log);
+                                    startActivity(intent);
+                                    break;
+                                }else {
+                                    Toast.makeText(LoginActivityAstiko.this, "Login ou mot de passe incorrect", Toast.LENGTH_SHORT).show();
+                                }
+                            loginText.setText("");
+                            passWordText.setText("");
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                }
+            });
+
+            queue.add(stringRequest);
         }
     }
 
@@ -136,5 +180,7 @@ public class LoginActivityAstiko extends Activity {
     private boolean isPasswordValid(String password) {
         return password.length() > 4;
     }
+
+
 }
 
