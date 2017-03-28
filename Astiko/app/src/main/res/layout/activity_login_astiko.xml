@@ -28,14 +28,21 @@
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1">
 
-            <TextView
-                android:text="Bienvenue sur Astiko"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/presentationAppli"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:layout_height="match_parent"
+                android:layout_weight="5.44">
+
+                <TextView
+                    android:text="Bienvenue sur Astiko"
+                    android:layout_width="match_parent"
+                    android:layout_height="258dp"
+                    android:id="@+id/presentationAppli"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -43,7 +50,7 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="44dp"
                     android:inputType="textPersonName"
                     android:ems="10"
                     android:id="@+id/login"
@@ -80,7 +87,8 @@
                 android:text="Créer un compte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/INscription" />
+                android:id="@+id/INscription"
+                android:layout_weight="1.94" />
 
         </LinearLayout>
     </ScrollView>
